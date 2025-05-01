@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 64fe82c0c39a6e347adc7d093c8cf511
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - actionBox: {instanceID: 0}
+  - commandBox: {instanceID: 0}
+  - interactCross: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
