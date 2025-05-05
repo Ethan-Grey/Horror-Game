@@ -1,33 +1,37 @@
-﻿using System.Collections;
+﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
-using System.Security.Cryptography.X509Certificates;
 
 namespace VHS
 {
     public class InteractableBase : MonoBehaviour, IInteractable
-    {   
-        #region Variables
+    {
+        #region Variables    
+            [Space,Header("Interactable Settings")]
 
-            [Header("Interactable Settings")]
-            public float holdDuration;
+            [SerializeField] private bool holdInteract = true;
+            [ShowIf("holdInteract")][SerializeField] private float holdDuration = 1f;
+            
+            [Space] 
+            [SerializeField] private bool multipleUse = false;
+            [SerializeField] private bool isInteractable = true;
 
-            [Space]
-            public bool holdInteract;
-            public bool multipleUse;
-            public bool isInteractable;
+            [SerializeField] private string tooltipMessage = "interact";
         #endregion
 
-        #region Properties
-            public float HoldDuration => holdDuration;
+        #region Properties    
+            public float HoldDuration => holdDuration; 
+
             public bool HoldInteract => holdInteract;
             public bool MultipleUse => multipleUse;
             public bool IsInteractable => isInteractable;
+
+            public string TooltipMessage => tooltipMessage;
         #endregion
 
         #region Methods
-            public void OnInteract()
+        public virtual void OnInteract()
             {
                 Debug.Log("INTERACTED: " + gameObject.name);
             }
